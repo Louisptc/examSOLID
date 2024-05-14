@@ -1,9 +1,10 @@
 import database from "../db/db.js";
 import { Book } from "../models/Book.js";
 import { Book as IBook } from "../types/Book.js";
+import { IBookService } from "../interfaces/IBookService.js";
 
-export default class BookService {
-  // Retrieves all books from the database
+export class BookService implements IBookService {
+    // Retrieves all books from the database
   public async getAllBooks(): Promise<Book[]> {
     const query = "SELECT * FROM books";
     const res = await database.query(query);
