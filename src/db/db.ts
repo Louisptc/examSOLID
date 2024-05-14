@@ -1,7 +1,12 @@
-import { Pool } from 'pg';
+// Import the entire pg module
+import pkg from 'pg';
+const { Pool } = pkg;
+
+// Import the type information for Pool
+import type { Pool as PoolType } from 'pg';
 
 class Database {
-  private pool: Pool;
+  private pool: PoolType;
 
   constructor() {
     this.pool = new Pool({
@@ -9,7 +14,7 @@ class Database {
       user: 'postgres',
       password: 'root',
       database: 'exoSOLID',
-      port: 5432, // Default port for PostgreSQL
+      port: 5432,
     });
   }
 

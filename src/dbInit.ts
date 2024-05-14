@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
-import database  from './db';
+import database  from './db/db.js';
 
 async function initializeDatabase(): Promise<void> {
     try {

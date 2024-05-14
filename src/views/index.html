@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Management</title>
+    <link href="/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <div class="container mx-auto p-8">
+        <h1 class="text-4xl mb-6 text-center">Book Management System</h1>
+
+        <!-- Form to add a new book -->
+        <div class="flex flex-wrap justify-between md:flex-row">
+            <form id="addBookForm" class="w-full max-w-sm bg-white rounded-lg p-4 mb-4">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="addTitle">
+                        Title
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="addTitle" type="text" placeholder="Title" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="addAuthor">
+                        Author
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="addAuthor" type="text" placeholder="Author" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="addPublishedDate">
+                        Published Date
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="addPublishedDate" type="date" required>
+                </div>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    Add Book
+                </button>
+            </form>
+
+            <!-- Form to update a book -->
+            <form id="updateBookForm" class="w-full max-w-sm bg-white rounded-lg p-4 mb-4">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="updateId">
+                        Book ID
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="updateId" type="number" placeholder="Book ID" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="updateTitle">
+                        New Title
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="updateTitle" type="text" placeholder="New Title">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="updateAuthor">
+                        New Author
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="updateAuthor" type="text" placeholder="New Author">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="updatePublishedDate">
+                        New Published Date
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="updatePublishedDate" type="date">
+                </div>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    Update Book
+                </button>
+            </form>
+
+            <!-- Form to delete a book -->
+            <form id="deleteBookForm" class="w-full max-w-sm bg-white rounded-lg p-4 mb-4">
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="deleteId">
+                        Book ID
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="deleteId" type="number" placeholder="Book ID" required>
+                </div>
+                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    Delete Book
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Display all books -->
+
+    <div class="container mx-auto p-8">
+        <table id="booksTable" class="w-full border-collapse border border-gray-300">
+            <thead>
+                <tr>
+                    <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">ID</th>
+                    <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Title</th>
+                    <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Author</th>
+                    <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Published Date</th>
+                </tr>
+            </thead>
+            <tbody id="booksTableBody">
+            </tbody>
+        </table>
+    
+    <script src="app.js"></script>
+</body>
+</html>
