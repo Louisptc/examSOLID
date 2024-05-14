@@ -1,3 +1,5 @@
+@config "./tailwind.config.j";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -1,17 +1,17 @@
-import BookService from "./bookService.js";
+import { IBookService } from "../interfaces/IBookService.js";
 import { Book } from "../models/Book.js";
 
 /**
  * Service class for managing library operations.
  */
 export class LibraryService {
-  private bookService: BookService;
+    private bookService: IBookService;
 
   /**
    * Constructs a new instance of the LibraryService class.
    */
-  constructor() {
-    this.bookService = new BookService();
+  constructor(bookService: IBookService) {
+    this.bookService = bookService;
   }
 
   /**
@@ -63,7 +63,7 @@ export class LibraryService {
     let book = new Book(bookId, title, author, publishedDate);
     await this.bookService.updateBook(book);
   }
-
+  
   /**
    * Retrieves all books in the library.
    * @returns A Promise that resolves with an array of all books in the library.
